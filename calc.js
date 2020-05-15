@@ -76,7 +76,7 @@
             try {
                 let input = this.input;
                 for(let { alias, name } of this.functions) {
-                    input = input.replace(alias, name);
+                    input = input.replace(new RegExp(`${alias}`, 'g'), name);
                 }
 
                 if((this.result = eval(input)) !== undefined) {
